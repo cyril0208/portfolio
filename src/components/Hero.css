@@ -25,7 +25,7 @@
   position: absolute;
   top: -120px; right: -80px;
   width: 560px; height: 560px;
-  background: radial-gradient(circle, rgba(245,158,11,.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(96,165,250,.08) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -34,7 +34,7 @@
   position: absolute;
   bottom: -100px; left: -120px;
   width: 400px; height: 400px;
-  background: radial-gradient(circle, rgba(245,158,11,.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(96,165,250,.05) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -58,8 +58,8 @@
   align-items: center;
   gap: 8px;
   padding: 5px 14px;
-  background: rgba(245,158,11,.08);
-  border: 1px solid rgba(245,158,11,.25);
+  background: rgba(96,165,250,.08);
+  border: 1px solid rgba(96,165,250,.25);
   border-radius: 999px;
   font-size: 12px;
   font-weight: 600;
@@ -139,7 +139,7 @@
 
 .hero-tagline {
   font-size: 16px;
-  color: #c4b8a8;
+  color: var(--text-secondary);
   line-height: 1.75;
   margin-bottom: 36px;
   max-width: 560px;
@@ -197,7 +197,7 @@
   object-position: top;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
-  box-shadow: 0 0 40px rgba(245,158,11,.15);
+  box-shadow: 0 0 40px rgba(96,165,250,.15);
 }
 
 .avatar-status {

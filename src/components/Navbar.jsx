@@ -38,7 +38,7 @@ export default function Navbar() {
       <div className="scroll-progress" style={{ width: `${progress}%` }} />
       <div className="nav-inner container">
         <button className="nav-logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          Cyril<span>.</span>
+          Cyril <span className="nav-logo-last">Zhang</span>
         </button>
         <ul className={`nav-links${menuOpen ? ' open' : ''}`}>
           {links.map(id => (

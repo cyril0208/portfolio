@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import './About.css'
 
 const stats = [
@@ -24,10 +25,32 @@ const certs = [
 ]
 
 export default function About() {
+  const photoRef = useRef(null)
+
+  const handleMouseMove = (e) => {
+    const el = photoRef.current
+    const rect = el.getBoundingClientRect()
+    const x = (e.clientX - rect.left) / rect.width - 0.5
+    const y = (e.clientY - rect.top) / rect.height - 0.5
+    el.style.transition = 'transform 0.08s ease'
+    el.style.transform = `perspective(700px) rotateY(${x * 22}deg) rotateX(${-y * 22}deg) scale(1.04)`
+  }
+
+  const handleMouseLeave = () => {
+    const el = photoRef.current
+    el.style.transition = 'transform 0.5s ease'
+    el.style.transform = 'perspective(700px) rotateY(0deg) rotateX(0deg) scale(1)'
+  }
+
   return (
     <section id="about" className="about">
       <div className="container about-inner">
-        <div className="about-photo">
+        <div
+          className="about-photo"
+          ref={photoRef}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+        >
           <img
             src="https://pub-a0e4dc01588c4b99b1eecb877acbb697.r2.dev/references/photo.jpg"
             alt="Cyril Zhang"

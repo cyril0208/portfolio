@@ -59,7 +59,7 @@
 .side-nav-item.active .side-nav-dot {
   background: var(--accent);
   transform: scale(1.4);
-  box-shadow: 0 0 8px rgba(245,158,11,.5);
+  box-shadow: 0 0 8px rgba(96,165,250,.5);
 }
 
 @media (max-width: 900px) {

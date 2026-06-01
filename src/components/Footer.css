@@ -44,8 +44,8 @@
 
 .footer-link:hover {
   color: var(--accent);
-  border-color: rgba(245,158,11,.3);
-  background: rgba(245,158,11,.04);
+  border-color: rgba(96,165,250,.3);
+  background: rgba(96,165,250,.04);
 }
 
 @media (max-width: 600px) {
