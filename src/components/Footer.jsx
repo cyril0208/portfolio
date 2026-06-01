@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="container footer-inner">
-        <p className="footer-brand">Cyril<span>.</span></p>
+        <p className="footer-brand">Cyril <span>Zhang</span></p>
         <div className="footer-links">
           <a href="https://github.com/cyril0208" target="_blank" rel="noreferrer" className="footer-link" aria-label="GitHub">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">

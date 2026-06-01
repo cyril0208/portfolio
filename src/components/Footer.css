@@ -19,7 +19,11 @@
   letter-spacing: -.5px;
 }
 
-.footer-brand span { color: var(--accent); }
+.footer-brand span {
+  color: var(--accent);
+  font-weight: 300;
+  letter-spacing: .06em;
+}
 
 .footer-copy {
   font-size: 12px;
