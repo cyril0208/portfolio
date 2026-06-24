@@ -192,6 +192,14 @@
 }
 .modal-summary { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
 
+.modal-screenshot {
+  display: block;
+  width: 100%;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+
 .modal-details {
   font-size: 14px;
   color: var(--text-secondary);
@@ -247,6 +255,12 @@
   border: none;
 }
 .modal-link--live:hover { opacity: .85; }
+.modal-link--college {
+  background: rgba(255,255,255,.07);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+.modal-link--college:hover { opacity: .8; }
 .modal-link--wip {
   color: var(--text-muted);
   border: 1px solid var(--border);

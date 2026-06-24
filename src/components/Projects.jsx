@@ -12,6 +12,8 @@ const projects = [
     tech: ['Next.js 14', 'TypeScript', 'React 18', 'Tailwind CSS', 'MySQL', 'NextAuth', 'Cloudflare R2', 'Resend', 'Zod', 'Jest', 'bcryptjs', 'otplib'],
     github: null,
     live: 'https://eliteconnect.ca/',
+    college: 'https://elitecollege.school/',
+    screenshot: 'https://pub-a0e4dc01588c4b99b1eecb877acbb697.r2.dev/references/assets/eliteconnect-preview.png',
   },
 ]
 
@@ -20,6 +22,15 @@ function ExternalIcon() {
     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
       <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
       <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+    </svg>
+  )
+}
+
+function CollegeIcon() {
+  return (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M22 10 12 5 2 10l10 5 10-5z"/>
+      <path d="M6 12v5c0 1 2.5 2.5 6 2.5s6-1.5 6-2.5v-5"/>
     </svg>
   )
 }
@@ -47,6 +58,10 @@ function Modal({ project, onClose }) {
           <p className="modal-summary">{project.summary}</p>
         </div>
 
+        {project.screenshot && (
+          <img className="modal-screenshot" src={project.screenshot} alt={`${project.title} screenshot`} loading="lazy" />
+        )}
+
         <p className="modal-details">{project.details}</p>
 
         <div className="modal-tech">
@@ -60,6 +75,11 @@ function Modal({ project, onClose }) {
           {project.live && (
             <a href={project.live} target="_blank" rel="noreferrer" className="modal-link modal-link--live">
               <ExternalIcon /> Visit Site
+            </a>
+          )}
+          {project.college && (
+            <a href={project.college} target="_blank" rel="noreferrer" className="modal-link modal-link--college">
+              <CollegeIcon /> College Site
             </a>
           )}
           {project.github && (
