@@ -9,9 +9,9 @@ const timeline = [
     location: 'Markham, ON',
     period: 'Apr 2026 – Present',
     bullets: [
-      'Founded and solely built Elite Connect — a live student-to-employer career platform — as the only in-house engineer, owning everything from architecture to production ops 0→1',
-      'Connected 100+ students with 10+ verified employer partners — 60-second video resumes, one-click applications, and a curated job board that gets students hired before graduation',
-      'Shipped and operated the full stack solo — automated test coverage and a full CI/CD pipeline — keeping a live production service reliable with zero additional headcount',
+      'Founded and solely built two live production platforms for Elite College as the only in-house engineer — Elite Connect (student↔employer careers) and a multi-company Invoice Management System (invoicing, agreements, payments) — owning everything from architecture to production ops 0→1',
+      'Connected 100+ students with 10+ verified employer partners via video resumes and one-click applications; built multi-company invoicing that auto-generates branded PDF invoices and tracks payments, HST/GST, and outstanding balances',
+      'Shipped and operated the full stack solo — automated test coverage and a full CI/CD pipeline — keeping live production services reliable with zero additional headcount',
     ],
     tech: ['Next.js 14', 'TypeScript', 'MySQL', 'Cloudflare R2', 'Resend'],
   },

@@ -15,6 +15,19 @@ const projects = [
     college: 'https://elitecollege.school/',
     screenshot: 'https://pub-a0e4dc01588c4b99b1eecb877acbb697.r2.dev/references/assets/eliteconnect-preview.png',
   },
+  {
+    id: 2,
+    title: 'Invoice Management System',
+    summary: 'Multi-company invoicing and agreements platform — generate branded invoices, draft and sign agreements, track payments and HST/GST, and report on billing from a single dashboard.',
+    tags: ['Next.js 15', 'React 19', 'TypeScript', 'PostgreSQL', 'Prisma'],
+    status: 'shipped',
+    details: 'Web platform for running multiple companies\' billing under one roof. Each company keeps its own branding, HST/GST number, and PDF letterhead template — invoices render on top of that design and auto-number as COMPANY-YYYY-NNNN. Create invoices with line items, taxes, and discounts; preview as PDF; email them via Resend with the PDF attached and every send logged. Record partial or full payments (E-Transfer, card, cheque, bank, cash) with balances and Draft → Sent → Paid → Overdue statuses updating automatically. Draft and sign service agreements with a rich-text editor and stored signatures.\n\nDashboard reports total billed, collected, outstanding, overdue, and HST/GST — filterable by company, client, date, and status, exportable to Excel or CSV. Role-based access (Admin / Staff) scopes staff to assigned companies. Built with Next.js 15 (App Router), React 19, TypeScript, PostgreSQL + Prisma, NextAuth, and Tailwind; PDFs generated with pdf-lib and stored on Cloudflare R2. Vitest test coverage.',
+    tech: ['Next.js 15', 'React 19', 'TypeScript', 'PostgreSQL', 'Prisma', 'NextAuth', 'Tailwind CSS', 'Radix UI', 'pdf-lib', 'ExcelJS', 'Cloudflare R2', 'Resend', 'Vitest'],
+    github: null,
+    live: null,
+    college: null,
+    screenshot: 'https://pub-a0e4dc01588c4b99b1eecb877acbb697.r2.dev/references/assets/invoice-system-preview.png',
+  },
 ]
 
 function ExternalIcon() {
@@ -103,7 +116,7 @@ export default function Projects() {
         <h2 className="section-title" data-reveal="" style={{'--reveal-delay': '0.08s'}}>Things I've shipped</h2>
         <p className="section-desc" data-reveal="" style={{'--reveal-delay': '0.14s'}}>Production projects. More coming as I build and complete them.</p>
 
-        <div className="projects-grid projects-grid--single">
+        <div className="projects-grid">
           {projects.map((p, i) => (
             <button key={p.id} className="project-card" data-reveal="" style={{'--reveal-delay': `${0.2 + i * 0.1}s`}} onClick={() => setSelected(p)}>
               <div className="project-card-top">
