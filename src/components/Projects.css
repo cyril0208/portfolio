@@ -203,8 +203,26 @@
 .modal-details {
   font-size: 14px;
   color: var(--text-secondary);
-  line-height: 1.8;
+  line-height: 1.7;
   margin-bottom: 24px;
+  list-style: none;
+}
+
+.modal-details li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 10px;
+}
+
+.modal-details li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 10px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
 }
 
 .modal-tech h4 {
