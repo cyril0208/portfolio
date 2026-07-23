@@ -10,7 +10,7 @@ Run locally: `npm run dev` (or the `portfolio` config in `.claude/launch.json`).
 
 ## Project descriptions
 
-All portfolio projects live in the `projects` array in `src/components/Projects.jsx`. When adding or editing one, follow these rules.
+All portfolio projects live in the `projects` array in `src/content/projects.js` (rendered by `src/components/Projects.jsx`). When adding or editing one, follow these rules.
 
 ### `details` — always bullets, never prose
 

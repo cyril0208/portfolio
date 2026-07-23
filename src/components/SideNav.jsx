@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
 import './SideNav.css'
+import { useActiveSection } from '../hooks/useActiveSection'
 
 const sections = [
   { id: 'hero',     label: 'Intro' },
@@ -9,26 +9,10 @@ const sections = [
   { id: 'resume',   label: 'Experience' },
 ]
 
+const ids = sections.map(s => s.id)
+
 export default function SideNav() {
-  const [active, setActive] = useState('hero')
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) setActive(entry.target.id)
-        })
-      },
-      { rootMargin: '-40% 0px -55% 0px' }
-    )
-
-    sections.forEach(({ id }) => {
-      const el = document.getElementById(id)
-      if (el) observer.observe(el)
-    })
-
-    return () => observer.disconnect()
-  }, [])
+  const active = useActiveSection(ids, { initial: 'hero' })
 
   const scrollTo = (id) => {
     const el = document.getElementById(id)

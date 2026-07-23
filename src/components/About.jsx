@@ -1,27 +1,12 @@
 import { useRef } from 'react'
 import './About.css'
+import { certs } from '../content/about'
+import SectionHeader from './Section'
 
 const stats = [
   { value: '2M+', label: 'Transactions / month' },
   { value: '100x', label: 'Scale, zero extra headcount' },
   { value: '75%', label: 'Infra cost reduction' },
-]
-
-const certs = [
-  {
-    name: 'Machine Learning Specialization',
-    issuer: 'Stanford University & DeepLearning.AI',
-    year: '',
-    skills: ['Supervised Learning', 'Neural Networks', 'Decision Trees', 'Unsupervised Learning', 'Reinforcement Learning', 'Recommender Systems'],
-    pdf: 'https://pub-a0e4dc01588c4b99b1eecb877acbb697.r2.dev/references/certification/ml_specialization.pdf',
-  },
-  {
-    name: 'AI Engineer for Developers Associate',
-    issuer: 'DataCamp',
-    year: '',
-    skills: ['LLM Applications', 'RAG Pipelines', 'Prompt Engineering', 'LangChain', 'Vector Databases', 'AI Deployment'],
-    pdf: 'https://pub-a0e4dc01588c4b99b1eecb877acbb697.r2.dev/references/certification/ai_engineer_datacamp.pdf',
-  },
 ]
 
 export default function About() {
@@ -59,8 +44,7 @@ export default function About() {
         </div>
 
         <div className="about-content">
-          <p className="section-label" data-reveal="">About</p>
-          <h2 className="section-title" data-reveal="" style={{'--reveal-delay': '0.08s'}}>Yiming (Cyril) Zhang</h2>
+          <SectionHeader label="About" title="Yiming (Cyril) Zhang" />
           <p className="about-body" data-reveal="" style={{'--reveal-delay': '0.16s'}}>
             I'm an AI Engineer with 3 years shipping <strong>production LLM systems at scale</strong>.
             At Web Industrial Solutions I architected AI infrastructure that scaled 100x and processed

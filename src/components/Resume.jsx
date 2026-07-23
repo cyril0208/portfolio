@@ -1,47 +1,7 @@
 import { useState, useEffect } from 'react'
 import './Resume.css'
-
-const timeline = [
-  {
-    type: 'work',
-    role: 'Founding Engineer',
-    org: 'Elite College of Business and Healthcare',
-    location: 'Markham, ON',
-    period: 'Apr 2026 – Present',
-    bullets: [
-      'Founded and solely built two live production platforms for Elite College as the only in-house engineer — Elite Connect (student↔employer careers) and a multi-company Invoice Management System (invoicing, agreements, payments) — owning everything from architecture to production ops 0→1',
-      'Connected 100+ students with 10+ verified employer partners via video resumes and one-click applications; built multi-company invoicing that auto-generates branded PDF invoices and tracks payments, HST/GST, and outstanding balances',
-      'Shipped and operated the full stack solo — automated test coverage and a full CI/CD pipeline — keeping live production services reliable with zero additional headcount',
-    ],
-    tech: ['Next.js 14', 'TypeScript', 'MySQL', 'Cloudflare R2', 'Resend'],
-  },
-  {
-    type: 'work',
-    role: 'Software Engineer — AI Infrastructure & DevOps',
-    org: 'Web Industrial Solutions',
-    location: 'Markham, ON',
-    period: 'Jul 2023 – Jan 2026',
-    bullets: [
-      'Architected LLM inference pipelines using OpenAI API — scaled platform 100x with zero additional headcount',
-      'Designed Golang + AWS SES system processing 2M+ transactions/month at enterprise reliability standards',
-      'Built automated data-formatting pipelines (JSON/HTML/structured), reducing manual processing >80%',
-      'Optimized cloud infra utilization, achieving ~75% cost reduction while maintaining strict SLA standards',
-      'Created multi-platform CI/CD automation: 250+ app variants/release, cycle from 7 days to under 2 days',
-    ],
-    tech: ['Golang', 'OpenAI API', 'AWS SES', 'AWS S3', 'Cloudflare R2'],
-  },
-  {
-    type: 'edu',
-    role: 'Bachelor of Computing',
-    org: "School of Computing, Queen's University",
-    location: 'Kingston, ON',
-    period: 'Sep 2020 – May 2025',
-    bullets: [
-      "Dean's List 2020–2021, 2021–2022",
-      "Queen's Excel Scholarship 2020",
-    ],
-  },
-]
+import { timeline } from '../content/resume'
+import { Download } from './icons'
 
 const MONTHS = { Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5, Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11 }
 
@@ -118,11 +78,7 @@ export default function Resume() {
             </div>
           </div>
           <a href="https://pub-a0e4dc01588c4b99b1eecb877acbb697.r2.dev/references/resume_ai_engineer.pdf" target="_blank" rel="noreferrer" className="btn-download">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-              <polyline points="7 10 12 15 17 10"/>
-              <line x1="12" y1="15" x2="12" y2="3"/>
-            </svg>
+            <Download size={14} />
             Download PDF
           </a>
         </div>
