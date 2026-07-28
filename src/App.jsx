@@ -8,6 +8,7 @@ import Projects from './components/Projects'
 import Resume from './components/Resume'
 import Footer from './components/Footer'
 import SideNav from './components/SideNav'
+import GhostCursorOverlay from './components/GhostCursorOverlay'
 import { useReveal } from './hooks/useReveal'
 
 export default function App() {
@@ -15,6 +16,7 @@ export default function App() {
 
   return (
     <>
+      <GhostCursorOverlay />
       <Navbar />
       <SideNav />
       <main>
