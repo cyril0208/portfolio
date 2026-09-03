@@ -21,9 +21,9 @@
 }
 
 .side-nav-label {
+  font-family: var(--mono);
   font-size: 11px;
-  font-weight: 600;
-  letter-spacing: .06em;
+  letter-spacing: 1px;
   text-transform: uppercase;
   color: var(--text-muted);
   opacity: 0;
@@ -46,7 +46,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--border-accent);
+  background: var(--border-strong);
   flex-shrink: 0;
   transition: background .2s, transform .2s, box-shadow .2s;
 }
@@ -59,7 +59,7 @@
 .side-nav-item.active .side-nav-dot {
   background: var(--accent);
   transform: scale(1.4);
-  box-shadow: 0 0 8px rgba(96,165,250,.5);
+  box-shadow: 0 0 8px oklch(0.75 0.14 250 / 0.5);
 }
 
 @media (max-width: 900px) {

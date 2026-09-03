@@ -3,13 +3,23 @@ import './Navbar.css'
 import { useActiveSection } from '../hooks/useActiveSection'
 import { Download } from './icons'
 
-const links = ['about', 'skills', 'projects', 'resume']
+// Label is carried explicitly because it no longer always matches the section
+// id — #resume reads as "Experience", matching the side nav and the heading.
+const links = [
+  { id: 'about', label: 'About' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'resume', label: 'Experience' },
+  { id: 'contact', label: 'Contact' },
+]
+
+const ids = links.map(l => l.id)
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [progress, setProgress] = useState(0)
-  const active = useActiveSection(links, { initial: '' })
+  const active = useActiveSection(ids, { initial: '' })
 
   useEffect(() => {
     const onScroll = () => {
@@ -33,16 +43,16 @@ export default function Navbar() {
       <div className="scroll-progress" style={{ width: `${progress}%` }} />
       <div className="nav-inner container">
         <button className="nav-logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          Cyril <span className="nav-logo-last">Zhang</span>
+          Cyril Zhang<span className="nav-logo-dot">.</span>
         </button>
         <ul className={`nav-links${menuOpen ? ' open' : ''}`}>
-          {links.map(id => (
+          {links.map(({ id, label }) => (
             <li key={id}>
               <button
                 className={`nav-link${active === id ? ' active' : ''}`}
                 onClick={() => scrollTo(id)}
               >
-                {id.charAt(0).toUpperCase() + id.slice(1)}
+                {label}
               </button>
             </li>
           ))}

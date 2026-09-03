@@ -1,40 +1,26 @@
-import { useState } from 'react'
 import './Skills.css'
 import { groups } from '../content/skills'
-import SectionHeader from './Section'
 
 export default function Skills() {
-  const [active, setActive] = useState(0)
-  const current = groups[active]
-
   return (
-    <section id="skills" className="skills">
+    <section id="skills" className="skills section--tight">
       <div className="container">
-        <SectionHeader label="Skills" title="What I work with" />
+        <p className="section-label" data-reveal="">Skills</p>
 
-        {/* Tab bar */}
-        <div className="skills-tabs" data-reveal="" style={{'--reveal-delay': '0.16s'}}>
-          {groups.map(({ category, Icon }, i) => (
-            <button
+        <div className="skills-rows">
+          {groups.map(({ category, skills }, i) => (
+            <div
               key={category}
-              className={`skills-tab${active === i ? ' active' : ''}`}
-              onClick={() => setActive(i)}
+              className="skills-row"
+              data-reveal=""
+              style={{ '--reveal-delay': `${0.08 + i * 0.08}s` }}
             >
-              <Icon />
-              {category}
-            </button>
-          ))}
-        </div>
-
-        {/* Skill cards grid */}
-        <div className="skills-panel" data-reveal="" style={{'--reveal-delay': '0.24s'}}>
-          <div className="skills-card-grid">
-            {current.skills.map(skill => (
-              <div key={skill} className="skill-item">
-                <span className="skill-item-name">{skill}</span>
+              <span className="skills-row-label">{category}</span>
+              <div className="skills-row-chips">
+                {skills.map(s => <span key={s} className="skill-chip">{s}</span>)}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

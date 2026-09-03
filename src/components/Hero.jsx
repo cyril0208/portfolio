@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './Hero.css'
+import ParticleField from './ParticleField'
 import { Github, LinkedIn, Email } from './icons'
 
 const ROLES = [
@@ -40,56 +41,48 @@ export default function Hero() {
 
   return (
     <section id="hero" className="hero">
-      <div className="hero-glow-1" aria-hidden />
-      <div className="hero-glow-2" aria-hidden />
+      <ParticleField className="hero-canvas" />
 
-      <div className="container hero-inner">
-        <div className="hero-text">
-          <h1 className="hero-name hero-animate" style={{'--delay': '0.1s'}}>
-            Hi, I'm<br /><span className="highlight">Cyril Zhang</span>
-          </h1>
-          <p className="hero-title hero-animate" style={{'--delay': '0.25s'}}>
-            {typed}<span className="typewriter-cursor typewriter-cursor--blink">|</span>
-          </p>
+      <div className="hero-inner">
+        <p className="hero-eyebrow hero-animate" style={{ '--delay': '0.1s' }}>
+          {typed}<span className="typewriter-cursor">_</span>
+        </p>
 
-          <p className="hero-tagline hero-animate" style={{'--delay': '0.4s'}}>
-            Results-driven AI Engineer specializing in designing and deploying production-grade
-            LLM applications, RAG pipelines, and end-to-end AI workflows. Proven track record of
-            integrating large language models into scalable enterprise systems and building
-            LLMOps infrastructure that drives measurable outcomes.
-          </p>
+        <h1 className="hero-name hero-animate" style={{ '--delay': '0.2s' }}>
+          Cyril Zhang
+        </h1>
 
-          <div className="hero-actions hero-animate" style={{'--delay': '0.7s'}}>
-            <button className="btn-primary" onClick={() => scrollTo('projects')}>
-              View Projects
-            </button>
-            <a href="mailto:cyrilyiming@gmail.com" className="btn-outline">
-              Get in Touch
-            </a>
-          </div>
+        <p className="hero-tagline hero-animate" style={{ '--delay': '0.32s' }}>
+          Designing and deploying production-grade LLM applications, RAG pipelines,
+          and end-to-end AI workflows.
+        </p>
 
-          <div className="hero-socials hero-animate" style={{'--delay': '0.85s'}}>
-            <span className="hero-socials-label">Find me on</span>
-            <a href="mailto:cyrilyiming@gmail.com" className="hero-social-link" aria-label="Email">
-              <Email size={20} />
-            </a>
-            <a href="https://github.com/cyril0208" target="_blank" rel="noreferrer" className="hero-social-link" aria-label="GitHub">
-              <Github size={20} />
-            </a>
-            <a href="https://www.linkedin.com/in/cyril-zhang-3a0bba250/" target="_blank" rel="noreferrer" className="hero-social-link" aria-label="LinkedIn">
-              <LinkedIn size={20} />
-            </a>
-          </div>
+        <div className="hero-actions hero-animate" style={{ '--delay': '0.44s' }}>
+          <button className="btn-primary" onClick={() => scrollTo('projects')}>
+            View my work
+          </button>
+          <button className="btn-outline" onClick={() => scrollTo('contact')}>
+            Get in touch
+          </button>
         </div>
 
+        <div className="hero-socials hero-animate" style={{ '--delay': '0.56s' }}>
+          <a href="mailto:cyrilyiming@gmail.com" className="hero-social-link" aria-label="Email">
+            <Email size={19} />
+          </a>
+          <a href="https://github.com/cyril0208" target="_blank" rel="noreferrer" className="hero-social-link" aria-label="GitHub">
+            <Github size={19} />
+          </a>
+          <a href="https://www.linkedin.com/in/cyril-zhang-3a0bba250/" target="_blank" rel="noreferrer" className="hero-social-link" aria-label="LinkedIn">
+            <LinkedIn size={19} />
+          </a>
+        </div>
       </div>
 
-      <div className="hero-scroll-hint" onClick={() => scrollTo('about')}>
-        <svg width="16" height="20" viewBox="0 0 16 20" fill="none">
-          <path d="M8 3v14M2 11l6 6 6-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-        <span>Scroll</span>
-      </div>
+      <button className="hero-scroll-cue" onClick={() => scrollTo('about')} aria-label="Scroll to about">
+        <span className="hero-scroll-label">Scroll</span>
+        <span className="hero-scroll-track"><span className="hero-scroll-dot" /></span>
+      </button>
     </section>
   )
 }

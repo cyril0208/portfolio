@@ -2,7 +2,6 @@ import { useState } from 'react'
 import './Projects.css'
 import { projects } from '../content/projects'
 import { Github, External } from './icons'
-import SectionHeader from './Section'
 
 function CollegeIcon() {
   return (
@@ -71,36 +70,30 @@ export default function Projects() {
   return (
     <section id="projects" className="projects">
       <div className="container">
-        <SectionHeader
-          label="Projects"
-          title="Things I've shipped"
-          desc="Production projects. More coming as I build and complete them."
-        />
+        <div className="projects-header" data-reveal="">
+          <p className="section-label">Selected work</p>
+          <h2 className="section-title">Things I've shipped.</h2>
+          <p className="section-desc">Production projects. More coming as I build and complete them.</p>
+        </div>
 
         <div className="projects-grid">
           {projects.map((p, i) => (
-            <button key={p.id} className="project-card" data-reveal="" style={{'--reveal-delay': `${0.2 + i * 0.1}s`}} onClick={() => setSelected(p)}>
-              <div className="project-card-top">
-                <div className="project-folder-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
-                  </svg>
+            <article key={p.id} data-reveal="" style={{ '--reveal-delay': `${0.1 + i * 0.1}s` }}>
+              <button className="project-card" onClick={() => setSelected(p)}>
+                <div className="project-card-media">
+                  {p.screenshot
+                    ? <img src={p.screenshot} alt={`${p.title} screenshot`} loading="lazy" />
+                    : <span className="project-card-placeholder">Project screenshot</span>}
                 </div>
-                <div className="project-card-actions">
-                  <span className="status-pill status-pill--shipped">Shipped</span>
-                  {p.live && (
-                    <a href={p.live} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()} className="project-github-link" aria-label="Visit site">
-                      <External size={13} />
-                    </a>
-                  )}
+                <div className="project-card-body">
+                  <h3 className="project-title">{p.title}</h3>
+                  <p className="project-summary">{p.summary}</p>
+                  <div className="project-tags">
+                    {p.tags.map(t => <span key={t} className="project-tag">{t}</span>)}
+                  </div>
                 </div>
-              </div>
-              <h3 className="project-title">{p.title}</h3>
-              <p className="project-summary">{p.summary}</p>
-              <div className="project-tags">
-                {p.tags.map(t => <span key={t} className="project-tag">{t}</span>)}
-              </div>
-            </button>
+              </button>
+            </article>
           ))}
         </div>
       </div>

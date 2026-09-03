@@ -61,12 +61,12 @@ export default function Resume() {
   const t = diffParts(ENGINEER_START, now)
 
   return (
-    <section id="resume" className="resume">
+    <section id="resume" className="resume section--alt">
       <div className="container">
         <div className="resume-header" data-reveal="">
           <div>
-            <p className="section-label">Resume</p>
-            <h2 className="section-title">Experience & Education</h2>
+            <p className="section-label">Experience</p>
+            <h2 className="section-title">Where I've worked.</h2>
             <div className="engineer-clock" aria-label="Time as an engineer">
               <span className="engineer-clock-label">Time As An Engineer</span>
               <span className="engineer-clock-value">
@@ -77,7 +77,7 @@ export default function Resume() {
               </span>
             </div>
           </div>
-          <a href="https://pub-a0e4dc01588c4b99b1eecb877acbb697.r2.dev/references/resume_ai_engineer.pdf" target="_blank" rel="noreferrer" className="btn-download">
+          <a href="https://pub-a0e4dc01588c4b99b1eecb877acbb697.r2.dev/references/resume_ai_engineer.pdf" target="_blank" rel="noreferrer" className="btn-outline">
             <Download size={14} />
             Download PDF
           </a>
@@ -85,27 +85,26 @@ export default function Resume() {
 
         <div className="timeline">
           {timeline.map((item, i) => (
-            <div key={i} className={`timeline-item timeline-item--${item.type}`} data-reveal="" style={{'--reveal-delay': `${0.1 + i * 0.15}s`}}>
-              <div className="timeline-marker">
-                <div className="timeline-dot" />
-                {i < timeline.length - 1 && <div className="timeline-line" />}
-              </div>
-              <div className="timeline-card">
-                <div className="timeline-meta">
-                  <span className="timeline-type">{item.type === 'work' ? 'Work' : 'Education'}</span>
-                  <span className="timeline-period">{item.period}{item.type === 'work' ? ` · ${roleDuration(item.period)}` : ''}</span>
+            <div
+              key={i}
+              className={`timeline-item timeline-item--${item.type}`}
+              data-reveal=""
+              style={{ '--reveal-delay': `${0.08 + i * 0.1}s` }}
+            >
+              <span className="timeline-dot" />
+              <span className="timeline-period">
+                {item.period}{item.type === 'work' ? ` · ${roleDuration(item.period)}` : ''}
+              </span>
+              <h3 className="timeline-role">{item.role} — {item.org}</h3>
+              <p className="timeline-org">{item.location}</p>
+              <ul className="timeline-bullets">
+                {item.bullets.map((b, j) => <li key={j}>{b}</li>)}
+              </ul>
+              {item.tech && (
+                <div className="timeline-tech">
+                  {item.tech.map(t => <span key={t} className="timeline-tag">{t}</span>)}
                 </div>
-                <h3 className="timeline-role">{item.role}</h3>
-                <p className="timeline-org">{item.org} · {item.location}</p>
-                <ul className="timeline-bullets">
-                  {item.bullets.map((b, j) => <li key={j}>{b}</li>)}
-                </ul>
-                {item.tech && (
-                  <div className="timeline-tech">
-                    {item.tech.map(t => <span key={t} className="timeline-tag">{t}</span>)}
-                  </div>
-                )}
-              </div>
+              )}
             </div>
           ))}
         </div>

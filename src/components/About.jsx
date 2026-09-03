@@ -1,13 +1,7 @@
 import { useRef } from 'react'
 import './About.css'
 import { certs } from '../content/about'
-import SectionHeader from './Section'
-
-const stats = [
-  { value: '2M+', label: 'Transactions / month' },
-  { value: '100x', label: 'Scale, zero extra headcount' },
-  { value: '75%', label: 'Infra cost reduction' },
-]
+import WireShape from './WireShape'
 
 export default function About() {
   const photoRef = useRef(null)
@@ -18,7 +12,7 @@ export default function About() {
     const x = (e.clientX - rect.left) / rect.width - 0.5
     const y = (e.clientY - rect.top) / rect.height - 0.5
     el.style.transition = 'transform 0.08s ease'
-    el.style.transform = `perspective(700px) rotateY(${x * 22}deg) rotateX(${-y * 22}deg) scale(1.04)`
+    el.style.transform = `perspective(700px) rotateY(${x * 18}deg) rotateX(${-y * 18}deg) scale(1.03)`
   }
 
   const handleMouseLeave = () => {
@@ -28,7 +22,9 @@ export default function About() {
   }
 
   return (
-    <section id="about" className="about">
+    <section id="about" className="about section--alt">
+      <WireShape className="about-shape" />
+
       <div className="container about-inner">
         <div
           className="about-photo"
@@ -44,18 +40,20 @@ export default function About() {
         </div>
 
         <div className="about-content">
-          <SectionHeader label="About" title="Yiming (Cyril) Zhang" />
-          <p className="about-body" data-reveal="" style={{'--reveal-delay': '0.16s'}}>
+          <p className="section-label" data-reveal="">About</p>
+          <h2 className="section-title" data-reveal="" style={{ '--reveal-delay': '0.08s' }}>
+            Building at the edge of LLM systems and product.
+          </h2>
+          <p className="about-body" data-reveal="" style={{ '--reveal-delay': '0.16s' }}>
             I'm an AI Engineer with 3 years shipping <strong>production LLM systems at scale</strong>.
             At Web Industrial Solutions I architected AI infrastructure that scaled 100x and processed
             2M+ monthly transactions — applying engineering discipline to LLMs, cloud infra, and CI/CD pipelines.
           </p>
-          <p className="about-body" data-reveal="" style={{'--reveal-delay': '0.24s'}}>
+          <p className="about-body" data-reveal="" style={{ '--reveal-delay': '0.24s' }}>
             I specialize in designing and deploying <strong>production-grade LLM applications, RAG pipelines,
             and end-to-end AI workflows</strong> — integrating large language models into scalable enterprise
             systems and building LLMOps infrastructure that drives measurable outcomes.
           </p>
-
         </div>
       </div>
 
