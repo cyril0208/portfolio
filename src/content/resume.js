@@ -1,16 +1,18 @@
 export const timeline = [
   {
     type: 'work',
-    role: 'Founding Engineer',
+    role: 'Software Engineer (Web Platforms & Automation)',
     org: 'Elite College of Business and Healthcare',
     location: 'Markham, ON',
     period: 'Apr 2026 – Present',
     bullets: [
-      'Founded and solely built two live production platforms for Elite College as the only in-house engineer — Elite Connect (student↔employer careers) and a multi-company Invoice Management System (invoicing, agreements, payments) — owning everything from architecture to production ops 0→1',
-      'Connected 100+ students with 10+ verified employer partners via video resumes and one-click applications; built multi-company invoicing that auto-generates branded PDF invoices and tracks payments, HST/GST, and outstanding balances',
-      'Shipped and operated the full stack solo — automated test coverage and a full CI/CD pipeline — keeping live production services reliable with zero additional headcount',
+      'Built and launched two production platforms from 0 to 1: Elite Connect for student-employer hiring and a multi-company invoicing system for invoices, agreements, and payments',
+      'Connected 100+ students with 10+ verified employers through video resumes and one-click applications',
+      'Automated branded invoices, agreements, HST/GST tracking, and payment reporting while owning architecture, CI/CD, deployments, and production support as the sole in-house software engineer',
+      'Own college websites, workflow automation, releases, troubleshooting, and staff technical support; translate staff requirements into improvements across student, employer, and finance workflows',
+      'Added automated tests and CI/CD, keeping production releases reliable without additional engineering headcount',
     ],
-    tech: ['Next.js 14', 'TypeScript', 'MySQL', 'Cloudflare R2', 'Resend'],
+    tech: ['Next.js', 'TypeScript', 'MySQL', 'PostgreSQL', 'Prisma', 'AWS S3'],
   },
   {
     type: 'work',
