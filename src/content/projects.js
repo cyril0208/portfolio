@@ -1,5 +1,22 @@
 export const projects = [
   {
+    id: 4,
+    title: 'Trading Atlas',
+    summary: 'An interactive, evidence-grounded curriculum for learning the foundations of US stock day trading.',
+    tags: ['Interactive curriculum', 'US equities', 'Evidence-based learning'],
+    status: 'shipped',
+    details: [
+      'Maps nine learning units across four stages, with clear paths between shared concepts.',
+      'Covers trading risk, markets, execution, orders, settlement, risk maths, market data, chart reading, and simulation.',
+      'Tracks learning progress and links each topic to its evidence rules.',
+    ],
+    tech: ['Interactive curriculum', 'Progress tracking', 'Evidence rules'],
+    github: null,
+    live: 'https://trading-atlas.vercel.app/',
+    college: null,
+    screenshot: 'https://pub-a0e4dc01588c4b99b1eecb877acbb697.r2.dev/references/assets/trading-atlas.png',
+  },
+  {
     id: 3,
     title: 'EV RAG Agent',
     summary: 'Bilingual RAG agent that answers Geely Geometry C ownership questions from the official manual with page-level citations — 100% accuracy on 47 held-out questions, 1.6s median latency.',
