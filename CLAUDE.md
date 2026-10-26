@@ -129,10 +129,11 @@ All portfolio projects live in the `projects` array in `src/content/projects.js`
 - `summary` — 1–2 sentences for the card. Lead with the outcome or a metric.
 - `tags` — max 5, headline tech only. Must be a subset of `tech`.
 - `tech` — full stack list, modal only.
-- `github` / `live` / `college` / `screenshot` — `null` when absent; each is conditionally rendered.
+- `github` / `live` / `college` — `null` when absent; each is conditionally rendered.
+- `screenshots` — array of image URLs, `[]` when absent. The first fills the card; the modal stacks all of them.
 - `id` — arbitrary, only used as a React key. Display order is array order, not id order.
 
-`screenshot` now carries real weight: it fills the card's 16:10 header, not just the modal. Without one the card falls back to a diagonal hatch with a "Project screenshot" label — fine as a placeholder, weak in a grid next to real images. Screenshots are hosted on Cloudflare R2 under `references/assets/`. Ask Cyril for the URL rather than guessing one.
+The first screenshot carries real weight: it fills the card's 16:10 header, not just the modal. Without one the card falls back to a diagonal hatch with a "Project screenshot" label — fine as a placeholder, weak in a grid next to real images. Screenshots are hosted on Cloudflare R2 under `references/assets/`. Ask Cyril for the URL rather than guessing one.
 
 ## Skills
 

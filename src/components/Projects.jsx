@@ -27,9 +27,9 @@ function Modal({ project, onClose }) {
           <p className="modal-summary">{project.summary}</p>
         </div>
 
-        {project.screenshot && (
-          <img className="modal-screenshot" src={project.screenshot} alt={`${project.title} screenshot`} loading="lazy" />
-        )}
+        {project.screenshots.map((src, i) => (
+          <img key={src} className="modal-screenshot" src={src} alt={`${project.title} screenshot ${i + 1}`} loading="lazy" />
+        ))}
 
         <ul className="modal-details">
           {project.details.map(d => <li key={d}>{d}</li>)}
@@ -81,8 +81,8 @@ export default function Projects() {
             <article key={p.id} data-reveal="" style={{ '--reveal-delay': `${0.1 + i * 0.1}s` }}>
               <button className="project-card" onClick={() => setSelected(p)}>
                 <div className="project-card-media">
-                  {p.screenshot
-                    ? <img src={p.screenshot} alt={`${p.title} screenshot`} loading="lazy" />
+                  {p.screenshots.length
+                    ? <img src={p.screenshots[0]} alt={`${p.title} screenshot`} loading="lazy" />
                     : <span className="project-card-placeholder">Project screenshot</span>}
                 </div>
                 <div className="project-card-body">
